@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
-import ReactDom from 'react-dom';
 import PropTypes from 'prop-types'
 import { HashRouter as Router, Route, Switch } from 'react-router-dom'
-
-import Default from './src/components/default/default.jsx';
+import Default from './components/default/default.jsx';
 
 export default class App extends Component {
   constructor(props) {
     super(props);
+  }
+
+  componentDidMount = () => {
+    
   }
 
   render() {
@@ -17,8 +19,12 @@ export default class App extends Component {
         <div>
           <Router>
             <Switch>
-              <Route exact path="/" component={Default} />
-              __react-router__
+              <Route
+                exact
+                path='/'
+                component={Default}
+              />
+              __react_router__
             </Switch>
           </Router>
         </div>
@@ -27,5 +33,7 @@ export default class App extends Component {
   }
 }
 
-ReactDom.render(<App />, document.getElementById('root'))
+App.propTypes = {
+  title: PropTypes.string
+};
 

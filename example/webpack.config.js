@@ -6,16 +6,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
   mode: 'development',
   entry: [
-    './app.js'
+    './index.js'
   ],
   output: {
     path: path.resolve(__dirname, './build'),
   },
   devtool: 'cheap-module-eval-source-map',
-  resolve: {
-    modules: ['node_modules', 'src'],
-    extensions: ['.js', '.jsx']
-  },
   module: {
     rules: [
       {
@@ -24,8 +20,11 @@ module.exports = {
         use: ['babel-loader', {
           loader: path.join(__dirname, '..'),
           options: {
-            componentDir: 'components'
-          }
+            componentDir: 'components',
+            reducerName: 'reducer',
+            typeName: 'type',
+            loadablePath: '../../lib/loadable',
+          },
         }]
       },
     ]
