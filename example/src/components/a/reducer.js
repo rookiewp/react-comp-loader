@@ -7,7 +7,7 @@ const defaultState = {
 
 export default (state = defaultState, action) => {
   switch (action.type) {
-    case types.intt:
+    case types.init:
       return Object.assign({}, state);
     case types.getData:
       return Object.assign({}, state, {

@@ -23,6 +23,7 @@ module.exports = {
             componentDir: 'components',
             reducerName: 'reducer',
             typeName: 'type',
+            sagaName: 'saga',
             loadablePath: '../../lib/loadable',
           },
         }]

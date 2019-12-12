@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux';
-import { doGetData } from './action';
+import { doInit } from './action';
 
 class View extends Component {
   constructor(props) {
@@ -14,8 +14,13 @@ class View extends Component {
 
   render() {
     return (
-      <div onClick={() => { this.props.dispatch(doGetData())}}>
-        a/{this.props.pageNum}
+      <div>
+        <div >
+          a
+        </div>
+        <div >
+          <button onClick={() => { this.props.dispatch(doInit())}}>dispatch saga</button>
+        </div>
       </div>
     )
   }
