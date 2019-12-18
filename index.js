@@ -55,5 +55,7 @@ module.exports = function reactRouterLoader(codeStr) {
     })
     result = code;
   }
+  ctx.addContextDependency(componentDir);
+  ctx.cacheable();
   return result;
 }
