@@ -1,2 +1,2 @@
-export let init;
-export let getData;
+export let changeData;
+export let async;

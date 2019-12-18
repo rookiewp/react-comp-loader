@@ -1,19 +1,14 @@
 import * as types from './type';
 
 const defaultState = {
-  pageNum: 1, // 当前页
-  typeList: [],
+  name: 'wp',
+  age: 28,
 };
 
 export default (state = defaultState, action) => {
   switch (action.type) {
-    case types.init:
-      return Object.assign({}, state);
-    case types.getData:
-      return Object.assign({}, state, {
-       pageNum: 2,
-      });
-    // 初始化页面数据
+    case types.changeData:
+      return Object.assign({}, state, action.data);
     default:
       return state;
   }

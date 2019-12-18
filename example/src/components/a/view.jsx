@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux';
-import { doInit } from './action';
+import { doChangeData, doAsync } from './action';
 
 class View extends Component {
   constructor(props) {
@@ -9,17 +9,32 @@ class View extends Component {
   }
 
   componentDidMount = () => {
-    console.log(this.props)
   }
 
   render() {
+    const { id } = this.props.match.params;
     return (
       <div>
         <div >
-          a
+          我是a页面
+          <div>name: {this.props.name}</div>
+          <div>路由参数：{id}</div>
         </div>
         <div >
-          <button onClick={() => { this.props.dispatch(doInit())}}>dispatch saga</button>
+          <button
+            onClick={() => {
+              this.props.dispatch(doChangeData({ name: 'xx' }));
+            }}>
+            dispatch
+          </button>
+        </div>
+        <div >
+          <button
+            onClick={() => {
+              this.props.dispatch(doAsync());
+            }}>
+            async
+          </button>
         </div>
       </div>
     )

@@ -1,11 +1,16 @@
-import { takeLatest } from 'redux-saga/effects'
+import { takeLatest, put } from 'redux-saga/effects'
 import * as types from './type';
+import { doChangeData } from './action';
 
-function* init() {
-  yield 'init';
-  console.log('a/int')
+function* async() {
+  const data = yield new Promise((r) => {
+    setTimeout(() => {
+      r('async')
+    }, 2000)
+  });
+  yield put(doChangeData({ name: data }))
 }
 
 export default function* rootSaga() {
-  yield takeLatest(types.init, init)
+  yield takeLatest(types.async, async)
 }

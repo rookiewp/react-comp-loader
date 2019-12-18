@@ -14,7 +14,7 @@ class View extends Component {
   render() {
     return (
       <div>
-        b
+        我是b页面
       </div>
     )
   }

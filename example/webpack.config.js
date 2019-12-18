@@ -37,10 +37,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
   ],
   devServer: {
-    contentBase: [path.join(__dirname, '../build'), path.join(__dirname, '..')],
     hot: true,
-    port: 2222,
-    disableHostCheck: true,
-    // open: true,
+    port: 3333,
   }
 }
